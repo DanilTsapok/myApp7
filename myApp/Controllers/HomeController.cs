@@ -18,7 +18,7 @@ namespace myApp.Controllers
         public IActionResult Download(string firstName, string secondName, string fileName )
         {
             string encodefileName = HttpUtility.UrlEncode(fileName);
-            string fileText = $"Ім'я {firstName}\n Прізвище: {secondName}";
+            string fileText = $"Ім'я {firstName}\nПрізвище: {secondName}";
             byte[]bytes = Encoding.UTF8.GetBytes(fileText);
             Response.Headers.Add("Content-Disposition", $"attachment; filename={encodefileName}.txt");
             Response.ContentType = "text/plain";
